@@ -9,6 +9,7 @@ export class Validation {
         let arr = []
         fieldText.forEach((el) => {
             arr.push(el.innerHTML)
+            
         })
         function isX(element) {
             return (element == 'X');
@@ -27,7 +28,7 @@ export class Validation {
             arr[0] == 'O' && arr[4] == 'O' && arr[8] == 'O' ||
             arr[2] == 'O' && arr[4] == 'O' && arr[6] == 'O') {
             this.alert.innerHTML = 'wygrana ' + this.circle
-            setTimeout("window.location.reload()", 1000);
+            setTimeout("window.location.reload()", 500);
         }
         if (
             arr.slice(0, 3).every(isX) ||
@@ -39,8 +40,11 @@ export class Validation {
             arr[0] == 'X' && arr[4] == 'X' && arr[8] == 'X' ||
             arr[2] == 'X' && arr[4] == 'X' && arr[6] == 'X') {
             this.alert.innerHTML = 'wygrana ' + this.cross
-            setTimeout("window.location.reload()", 1000);
+            setTimeout("window.location.reload()", 500);
         }
-
+        if(arr.every((num)=>num !='')){
+            this.alert.innerHTML = 'remis'
+            setTimeout("window.location.reload()", 500);
+        }
     }
 }

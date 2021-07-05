@@ -18,13 +18,14 @@ export class Board {
         alert.style.height = `${this.width/4}rem`
         alert.style.marginBottom = `${this.width/8}rem`
         BODY.append(alert)
+        
         const container = document.createElement('div')
         container.style.width = `${this.width*Math.sqrt(this.field,2)}rem`
         container.style.height = `${this.width*Math.sqrt(this.field,2)}rem`
         container.style.display = 'flex'
-
         container.style.flexWrap = 'wrap'
         BODY.append(container)
+
         for (let i = 0; i < this.field; i++) {
             const div = document.createElement('div')
             div.setAttribute('class', 'field')
@@ -37,8 +38,9 @@ export class Board {
             div.style.justifyContent = 'center'
             div.style.alignItems = 'center'
             container.append(div)
-
         }
+
         return BODY
     }
+
 }
